@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCrimesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('crimes', function (Blueprint $table) {
+            $table->id('_id');
+            $table->string('delito');
+            $table->string('fecha_hechos');            
+            $table->string('fiscalia');            
+            $table->string('agencia');            
+            $table->string('unidad');            
+            $table->string('categoria_delito');
+            $table->string('alcaldia');
+            $table->string('competencia');
+            $table->string('longitud');
+            $table->string('latitud');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('crimes');
+    }
+}
